@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "description": "High-performance customizable HTTP engine",
-  "keywords": ["http", "server", "parser", "engine", "http-server", "low-level"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server/index.js"
   },
   "dependencies": {
+    "corecdtl": "^0.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-is": "^19.2.4",
@@ -23,14 +24,5 @@
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DirikTi/corecdtl.git"
-  },
-  "bugs": {
-    "url": "https://github.com/DirikTi/corecdtl/issues"
-  },
-  "homepage": "https://github.com/DirikTi/corecdtl#readme",
-  "files": ["dist", "lib", "index.js", "README.md"]
+  }
 }
