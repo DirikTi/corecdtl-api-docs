@@ -25,23 +25,6 @@ export function Install() {
         </p>
       </div>
 
-      {/* CMake */}
-      <div className="space-y-4">
-        <h2 className="text-xl font-bold text-slate-100">Build from Source</h2>
-        <CodeBlock
-          language="bash"
-          code={`git clone https://github.com/corecdtl/corecdtl
-cd corecdtl
-mkdir build && cd build
-cmake ..
-make`}
-          title="Build"
-        />
-        <p className="text-sm text-slate-500">
-          Requires a C++20 compatible compiler and CMake ≥ 3.20.
-        </p>
-      </div>
-
       {/* Note */}
       <div className="p-4 border-l-4 border-cyan-500 bg-cyan-500/5">
         <p className="text-sm text-slate-300 italic">

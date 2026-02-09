@@ -21,13 +21,12 @@ if (obj !== null) {
 
 const PERFORMANCE_CODE = `import { createServer } from "corecdtl/http";
 
-const engine = createServer({
-  port: 8080,
+const apiEngine = createServer({
   timeout: 10_000,
   untilEnd: false
 }).Api({});
 
-engine.listen();`;
+apiEngine.listen(8080);`;
 
 const Home: React.FC = () => {
   return (
