@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Docs from './pages/Docs';
 import Benchmarks from './pages/Benchmarks';
 import DesignInternals from './pages/DesignInternals';
+import Cover from './pages/Cover';
 
 // Scroll to top on route change
 const ScrollToTop: React.FC = () => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <Route path="/docs/:itemId" element={<Docs />} />
           <Route path="/benchmarks" element={<Benchmarks />} />
           <Route path="/design-internals" element={<DesignInternals />} />
+          <Route path="/cover" element={<Cover />} />
         </Routes>
         
         {/* Footer */}
