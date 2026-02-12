@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         
         <Link to="/" className="flex items-center gap-4 group relative">
           <img width="60" height="60"
-            src="assets/logo.png"
+            src="/assets/logo.png"
             alt="Lynx Running" 
            />
         </Link>
