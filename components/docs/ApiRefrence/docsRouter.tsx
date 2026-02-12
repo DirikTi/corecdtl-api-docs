@@ -1,15 +1,17 @@
 import CodeBlock from "@/components/CodeBlock";
 import { Arrow, Stage } from "@/components/Stage";
 
-const code1 = `const mwLog = createMiddleware(...);
+const code1 = `import { Factory } from "corecdtl";
+
+const mwLog = Factory.createMiddleware(...);
 rootRouter.addMiddleware(mwLog);
 
-const userRoute = createRoute("/users");
+const userRoute = Factory.createRoute("/users");
 
-const mwAuth = createMiddleware(...);
+const mwAuth = Factory.createMiddleware(...);
 userRoute.addMiddleware(myAuth);
 
-const profileEP = createEndpoint(HttpMethod.GET ,"/:id/profile", ...);
+const profileEP = Factory.createEndpoint(HttpMethod.GET ,"/:id/profile", ...);
 userRoute.addEndpoint(profileEP);
 
 rootRouter.addRoute(userRoute);`;
@@ -28,7 +30,9 @@ export function DocRouter({ setActiveId }: any) {
         </p>
       </div>
     <div>
-        <CodeBlock code={`const rootRouter = createRouter("/api/v1")`} title="router" />
+        <CodeBlock code={`import { Factory } from "corecdtl";
+          
+const rootRouter = Factory.createRouter("/api/v1")`} title="router" />
     </div>
       {/* Responsibility */}
       <div className="space-y-4">

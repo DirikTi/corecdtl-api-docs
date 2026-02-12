@@ -66,7 +66,9 @@ export function DocMiddleware() {
 
         <CodeBlock
           title="createMiddleware"
-          code={`const authMw = createMiddleware((req, resp) => {
+          code={`import { Factory } from "corecdtl";
+
+const authMw = Factory.createMiddleware((req, resp) => {
     const token = req.headers["authorization"]
     ...
 });`}
@@ -86,10 +88,12 @@ export function DocMiddleware() {
 
         <CodeBlock
           title="middleware-handler"
-          code={`const authMiddleware = createMiddleware(
+          code={`import { Factory } from "corecdtl";
+
+const authMiddleware = createMiddleware(
   (req, res, next) => {
     if (!req.headers.authorization) {
-      res.status(401).send("Unauthorized");
+      res.setStatus(401).send("Unauthorized");
       return;
     }
 

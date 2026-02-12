@@ -55,7 +55,9 @@ export function DocServer({ setActiveId }: any) {
       <CodeBlock
         title="createServer.ts"
         language="ts"
-        code={`createServer({
+        code={`import { createServer } from "corecdtl";
+          
+createServer({
   maxHeaderSize: 4096,
   maxContentSize: 5 * 1024 * 1024,
   maxRequests: 8000,

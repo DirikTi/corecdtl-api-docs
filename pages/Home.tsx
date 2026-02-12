@@ -19,12 +19,13 @@ if (obj !== null) {
 }
 `;
 
-const PERFORMANCE_CODE = `import { createServer } from "corecdtl/http";
+const PERFORMANCE_CODE = `import { createServer, Factory } from "corecdtl";
+const root = Factory.createRoute("/api/v1");
 
 const apiEngine = createServer({
   timeout: 10_000,
   untilEnd: false
-}).Api({});
+}).Api(root);
 
 apiEngine.listen(8080);`;
 

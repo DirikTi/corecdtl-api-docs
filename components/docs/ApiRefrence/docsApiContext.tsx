@@ -49,7 +49,9 @@ export function DocApiContext() {
 
         <CodeBlock
           title="create-api-context"
-          code={`const server = createServer({
+          code={`import { createServer } from "corecdtl";
+            
+const server = createServer({
   maxHeaderSize: 4096,
   maxRequests: 8000
 });

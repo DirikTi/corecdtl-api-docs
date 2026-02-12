@@ -15,8 +15,8 @@ export function Quickstart() {
       <CodeBlock
         language="javascript"
         title="server.js"
-        code={`import { createServer, createRoute } from 'corecdtl';
-const root = createRoute("/api/v1");
+        code={`import { createServer, Factory } from 'corecdtl';
+const root = Factory.createRoute("/api/v1");
 
 const api = createServer({
     timeout: 10_000,

@@ -46,7 +46,9 @@ export function DocWebContext() {
 
         <CodeBlock
           title="create-web-context"
-          code={`const server = createServer({
+          code={`import { createServer } from "corecdtl";
+            
+const server = createServer({
   maxHeaderSize: 4096
 });
 

@@ -65,7 +65,9 @@ export function DocEndpoint({ setActiveId }: any) {
 
         <CodeBlock
           title="endpoint.ts"
-          code={`const getUserEndpoint = createEndpoint(
+          code={`import { Factory } from "corecdtl";
+            
+const getUserEndpoint = Factory.createEndpoint(
   HttpMethod.GET,
   "/profile",
   async (req, res) => {
@@ -116,7 +118,7 @@ export function DocEndpoint({ setActiveId }: any) {
   // req -> parsed request
   // res -> response abstraction
 
-  res.status(200).send("OK");
+  res.setStatus(200).send("OK");
 }`}
         />
 
@@ -138,13 +140,15 @@ export function DocEndpoint({ setActiveId }: any) {
 
         <CodeBlock
           title="content-config"
-          code={`const createUserEndpoint = createEndpoint(
+          code={`import { Factory, Http } from "corecdtl";
+            
+const createUserEndpoint = Factory.createEndpoint(
   HttpMethod.POST,
   "/users",
   handler,
   {
-    type: ContentTypeTables.JSON,
-    encoding: ContentEncodingTables.gzip
+    type: Http.ContentTypeTables.JSON,
+    encoding: Http.ContentEncodingTables.gzip
   }
 );`}
         />
@@ -167,13 +171,15 @@ export function DocEndpoint({ setActiveId }: any) {
 
         <CodeBlock
           title="content-config"
-          code={`const createUserEndpoint = createEndpoint(
+          code={`import { Factory, Http } from "corecdtl";
+      
+const createUserEndpoint = Factory.createEndpoint(
   HttpMethod.POST,
   "/users",
   handler,
   {
-    type: ContentTypeTables.JSON,
-    encoding: ContentEncodingTables.gzip
+    type: Http.ContentTypeTables.JSON,
+    encoding: Http.ContentEncodingTables.gzip
   },
   {
     untilEnd: false,
@@ -333,7 +339,9 @@ export function DocEndpoint({ setActiveId }: any) {
 
         <CodeBlock
           title="custom-accumulator"
-          code={`createEndpoint(
+          code={`import { Factory } from "corecdtl";
+
+Factory.createEndpoint(
   HttpMethod.POST,
   "/stream",
   handler,
@@ -367,7 +375,9 @@ export function DocEndpoint({ setActiveId }: any) {
 
         <CodeBlock
           title="endpoint-options"
-          code={`const uploadEndpoint = createEndpoint(
+          code={`import { Factory } from "corecdtl";
+          
+const uploadEndpoint = Factory.createEndpoint(
   HttpMethod.POST,
   "/upload",
   handler,
